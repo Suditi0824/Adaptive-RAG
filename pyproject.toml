@@ -1,0 +1,23 @@
+[project]
+name = "rag"
+version = "0.1.0"
+description = "Next Gen Agentic RAG"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "azure-ai-inference>=1.0.0b9",
+    "crawl4ai>=0.6.3",
+    "dotenv>=0.9.9",
+    "llama-index>=0.12.37",
+    "llama-index-core>=0.12.37",
+    "numpy>=2.2.6",
+    "pydantic>=2.11.5",
+    "pydantic-settings>=2.9.1",
+    "pyyaml>=6.0.2",
+    "rich>=14.0.0",
+    "surrealdb>=1.0.4",
+    "typer>=0.16.0",
+]
+[tool.pyright]
+reportUnknownMemberType = false
+reportUnknownArgumentType = false
