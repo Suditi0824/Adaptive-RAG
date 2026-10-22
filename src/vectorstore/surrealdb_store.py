@@ -55,12 +55,12 @@ class SurrealDBVectorStore(VectorStoreInterface):
         schema_queries = [
             "DEFINE TABLE IF NOT EXISTS documents SCHEMAFULL;",
             "DEFINE FIELD IF NOT EXISTS content ON documents TYPE string;",
-            "DEFINE FIELD IF NOT EXISTS metadata ON documents FLEXIBLE TYPE object;",
+            "DEFINE FIELD IF NOT EXISTS metadata ON documents TYPE object FLEXIBLE;",
             "DEFINE FIELD IF NOT EXISTS embedding ON documents TYPE array<float>;",
             "DEFINE INDEX IF NOT EXISTS hnsw_embedding ON documents FIELDS embedding HNSW DIMENSION 3072 DIST COSINE TYPE F32 EFC 500 M 16;",
             "DEFINE TABLE web_search SCHEMAFULL;",
             "DEFINE FIELD content ON web_search TYPE string;",
-            "DEFINE FIELD metadata ON web_search FLEXIBLE TYPE object;",
+            "DEFINE FIELD metadata ON web_search TYPE object FLEXIBLE;",
             "DEFINE FIELD embedding ON web_search TYPE array<float>;",
             "DEFINE INDEX hnsw_embedding ON web_search FIELDS embedding HNSW DIMENSION 3072 DIST COSINE TYPE F32 EFC 500 M 16;",
         ]

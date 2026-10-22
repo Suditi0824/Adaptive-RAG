@@ -20,7 +20,7 @@ class GithubEmbeddings(EmbeddingInterface):
     ) -> None:
         super().__init__()
 
-        self.endpoint = endpoint or "https://models.inference.ai.azure.com"
+        self.endpoint = endpoint or "https://models.github.ai/inference"
         self.model_name = model_name or "text-embedding-3-large"
         self.token = token or settings.github_token
 
